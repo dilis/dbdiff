@@ -27,7 +27,6 @@ while r:
 
 # 2. discover the primary keys
 for t in tables:
-    #print 'for %s' % t
     cur.execute("""select a.attname
         from pg_index i
         join pg_attribute a
