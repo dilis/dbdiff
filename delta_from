@@ -1,0 +1,3 @@
+./pg_snap $$
+./diff_snaps $1 $$
+rm -Rf $$

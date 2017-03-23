@@ -1,0 +1,8 @@
+pushd $1 > /dev/null
+for f in *; do
+    echo $f begin
+    diff $f ../$2/$f
+    echo $f end
+done | sed "$b;/^[^ ]* begin$/{$!N;/^[^ ]* begin\n[^ ]* end$/d;P;D;}"
+#done | sed -n '$b/^\[^ \]*begin$/{$!N/^\[^ \]*begin\n\[^ \]*end/d;P;D;}'
+popd > /dev/null
